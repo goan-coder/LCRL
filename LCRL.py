@@ -28,7 +28,7 @@ ans2=[]
 # list=[10,100,500,999,2000,5000,9999]
 Q=np.zeros((500,6),dtype=np.float64)
 ldba=LDBA()
-for i_episode in range(1000):
+for i_episode in range(10000):
     no_of_iterations=0
     observation = env.reset()
     ldba.reset()
