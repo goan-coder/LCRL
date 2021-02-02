@@ -1,11 +1,5 @@
-update_MDP(X,Y):-
-    random_between(0, 499, Y),
-    print('x is '),
-    print(X),
-    print('y is '),
-    print(Y),
-    write('\n').
- 
+update_MDP(_,Y):-
+    random_between(0, 499, Y).
 trans(0,X/q0,Y/q1):-
     (X//20) mod 5 is 4,
     \+ ((X//20 ) mod 5)=:=((X//100) mod 5),
@@ -45,7 +39,9 @@ ts(X/S,X/S).
 ts(X/S,Y/S0):-
     trans(T,X/S,Z/S1),
     write('\n'),
-    print(' T is '),
+    print(' Chosen edge(T) is '),
     print(T),
+    print(' current state(S1) is '),
+    print(S1),
     ts(Z/S1,Y/S0),
     !.
