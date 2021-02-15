@@ -1,0 +1,39 @@
+ts(X/S,X/S).
+ts(X/S,Y/S0):-
+    trans(_,X/S,Z/S1),
+    ts(Z/S1,Y/S0),!.
+
+total_states(10).
+
+trans(T,X/S,Z/S1):-
+    msw(trans(X,S),Z),
+    get_next_state(S1),
+    total_states(N),
+    T is X*N+Z.
+
+values(trans(_,_),[1-N]):-
+    total_states(N).
+
+values(reward(_),[0,1]).
+
+values(init,[1-N]):-
+    total_states(N).
+
+hmm(States,Rewards):-
+    msw(init,S),
+    hmm(S,States,Rewards). 
+
+hmm(_,[],[]).
+
+hmm(S,[State_H|State_T],[Rew_H|Rew_T]) :-
+    % write(State_H),nl,
+    % write(Rew_H),nl,
+    msw(reward(S),Rew_H),
+    msw(trans(S,State_H),Next),
+    % write(Next),nl,
+    hmm(Next,State_T,Rew_T).
+
+main:-
+    data(X),
+    learn(X).
+

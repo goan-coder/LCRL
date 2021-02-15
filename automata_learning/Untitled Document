@@ -1,0 +1,14 @@
+#goals: 0.......(75)
+Exporting switch information to the EM routine ... done
+#em-iters: 0.........100.........200...(236) (Converged: -18.375650154)
+Statistics on learning:
+        Graph size: 2910300
+        Number of switches: 75191
+        Number of switch instances: 751830
+        Number of iterations: 236
+        Final log likelihood: -18.375650154
+        Total learning time: 5713.366 seconds
+        Explanation search time: 51.045 seconds
+        Total table space used: 265233600 bytes
+Type show_sw to show the probability distributions.
+
