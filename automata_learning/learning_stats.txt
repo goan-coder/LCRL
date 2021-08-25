@@ -12,3 +12,17 @@ Statistics on learning:
         Total table space used: 265233600 bytes
 Type show_sw to show the probability distributions.
 
+#goals: 0.......(75)
+Exporting switch information to the EM routine ... done
+#em-iters: 0.........100.........200.........300.........400.........500.(511) (Converged: -39.852865484)
+Statistics on learning:
+        Graph size: 2908200
+        Number of switches: 21671
+        Number of switch instances: 216630
+        Number of iterations: 511
+        Final log likelihood: -39.852865484
+        Total learning time: 427.071 seconds
+        Explanation search time: 34.949 seconds
+        Total table space used: 182753232 bytes
+Type show_sw to show the probability distributions.
+

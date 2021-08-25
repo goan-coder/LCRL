@@ -7,6 +7,16 @@ class LDBA:
         self.rp=2000
         self.rn=-100
         self.sinks={'trap'}
+    def state_no(self):
+        if(self.current_state=='q0'):
+            return 0
+        if(self.current_state=='q1'):
+            return 1
+        if(self.current_state=='q2'):
+            return 2
+        if(self.current_state=='q3'):
+            return 3
+        return 4
     def reward(self):
         if self.current_state in self.A:
             return self.rp

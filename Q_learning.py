@@ -1,6 +1,7 @@
 import random
 import gym
 import numpy as np
+import matplotlib.pyplot as plt
 def epsilon_greedy(actions,epsilon):
     p=random.uniform(0,1)
     if p>0.15:
@@ -26,7 +27,7 @@ ans=[]
 # list=[10,100,500,999,2000,5000,9999]
 Q=np.zeros((500,6),dtype=np.float64)
 
-for i_episode in range(1000):
+for i_episode in range(10000):
     no_of_iterations=0
     observation = env.reset()
     t=0
@@ -46,9 +47,12 @@ for i_episode in range(1000):
         if done:
             print("Episode finished after {} timesteps".format(t))
             total_steps+=t
-#             if i_episode in list:
             ans.append(t)
             break
 env.close()
 print(ans)
+plt.plot(ans)
+plt.xlabel('Episode Number')
+plt.ylabel('Number of steps taken to reach goal')
+plt.show()
 # print(list)

@@ -37,3 +37,4 @@ main:-
     data(X),
     learn(X).
 
+:- set_prism_flag(data_source,file('traces.dat')).
